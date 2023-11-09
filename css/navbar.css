@@ -1,0 +1,150 @@
+.navbar {
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(0, 0, 0, 0.815));
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .nav-btn {
+    font-size: 12pt;
+    background: #fff;
+    color: #181C1D;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 130px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+  
+  .logo img {
+    width: 160px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-right: 40px;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    font-size: 13pt;
+    margin-right: 40px;
+  }
+  
+  .nav-links li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .nav-links li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .burger {
+    display: none;
+    cursor: pointer;
+    padding: 7px 40px 0 0;
+  }
+  
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+  }
+  
+  .burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .burger.toggle .line2 {
+    opacity: 0;
+  }
+  
+  .burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  @media screen and (max-width: 768px) {
+
+    .navbar {
+      align-items: flex-start;
+      z-index: 5000;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+  
+    .nav-active {
+      list-style: none;
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      /* Lower than the burger's z-index */
+      transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .burger {
+      display: block;
+      z-index: 1000;
+    }
+  }  

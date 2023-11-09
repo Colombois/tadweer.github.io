@@ -1,0 +1,132 @@
+
+#projects {
+    padding: 150px 0;
+}
+
+.headline h2 {
+    font-family: 'Sharp Sans No1 Bold';
+    color: #366655;
+    font-size: 40pt;
+    text-align: left;
+}
+
+.headline p {
+    padding-top: 10px;
+    text-align: left;
+    font-size: 15pt;
+}
+
+.carousel {
+    display: block;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.carousel-slide {
+    height: 500px;
+    width: 300px;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden; /* Ensure the zoom-out effect stays within the bounds */
+    background-size: cover; /* Ensure the background covers the slide */
+    transition: transform 0.5s ease; /* Smooth transition for the transform */
+    cursor: pointer;
+}
+
+.carousel-slide:hover {
+    transform: scale(0.95); /* Slightly zoom out */
+}
+
+.carousel-slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0, 0, 0, 1));
+    z-index: 2;
+  }
+
+.carousel-slide-content {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    z-index: 100;
+    height: 90%;
+}
+
+.carousel-slide-content h2 {
+    font-family: 'Sharp Sans No1 Semibold';
+    font-size: 18pt;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.carousel-slide-content p {
+    position: relative;
+    font-size: 12pt;
+    color: #fff;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 100; /* Initially show only the first two lines */
+    -webkit-box-orient: vertical;
+    max-height: 46px; /* Adjust this value based on your font size and line-height to show two lines */
+    transition: max-height 0.5s ease-in-out; /* Smooth transition for the max-height */
+}
+
+.carousel-slide:hover .carousel-slide-content p {
+    -webkit-line-clamp: none; /* Show all lines on hover */
+    max-height: 200px; /* Remove the max-height restriction on hover */
+}
+
+.carousel-slide:hover .carousel-slide-content p::after {
+    background: transparent; /* hide the gradient on hover */
+    transition-delay: 0s; /* No delay when hovering in */
+}
+
+.caro1 {
+    background-image: url('/img/WTZ_background.webp');
+}
+
+.caro2 {
+    background-image: url('/img/SAF.webp');
+}
+
+.caro3 {
+    background-image: url('/img/MRF_background.webp');
+}
+
+.caro4 {
+    background-image: url('/img/RDF.webp');
+}
+
+@media only screen and (max-width: 768px) {
+    .headline h2{
+        font-size: 30pt;
+    }
+    .carousel-container {
+        flex-wrap: wrap;
+        justify-content: normal;
+    }
+
+    .carousel-slide {
+        width: 100%;
+        max-width: 205px;
+        margin: 5px;
+    }
+
+    #projects {
+        padding: 75px 0;
+    }
+
+    .carousel-slide-content p {
+        max-height: 300px;
+    }
+}
