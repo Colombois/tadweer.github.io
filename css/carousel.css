@@ -92,19 +92,19 @@
 }
 
 .caro1 {
-    background-image: url('/img/WTZ_background.webp');
+    background-image: url('./img/WTZ_background.webp');
 }
 
 .caro2 {
-    background-image: url('/img/SAF.webp');
+    background-image: url('./img/SAF.webp');
 }
 
 .caro3 {
-    background-image: url('/img/MRF_background.webp');
+    background-image: url('./img/MRF_background.webp');
 }
 
 .caro4 {
-    background-image: url('/img/RDF.webp');
+    background-image: url('./img/RDF.webp');
 }
 
 @media only screen and (max-width: 768px) {
